@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Video</title>
+    
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <style type="text/css">
+  body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+  </style>
+  
+  
+  
+
+  </head>
+<body>
+
+    <div align="center">
+
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="900" height="500" id="movie_name" align="middle">
+    <param name="movie" value=""/>
+  
+    <!--[if !IE]>-->
+    <object id="otro" type="application/x-shockwave-flash" data="" width="900" height="500">
+        <param name="movie" value=""/>
+      
+    <!--<![endif]-->
+        <a href="http://www.adobe.com/go/getflash">
+            <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player"/>
+        </a>
+    <!--[if !IE]>-->
+    </object>
+    <!--<![endif]-->
+</object>
+
+
+<script>
+	
+var sco_n = document.getElementById("movie_name");
+var sco_2 = document.getElementById("otro");
+
+function carga_sco(ruta_sco) {
+	
+	sco_2.data  = 'sco/'+ ruta_sco + '.swf';
+	sco_n.value = 'sco/'+ ruta_sco + '.swf';
+	
+
+}
+
+carga_sco(parent.scos[parent.currentView])
+
+</script>
+
+    
+    </div>
+
+   
+    
+</body>
+</html>

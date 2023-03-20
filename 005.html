@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<!--
+	NOTES:
+	1. All tokens are represented by '$' sign in the template.
+	2. You can write your code only wherever mentioned.
+	3. All occurrences of existing tokens will be replaced by their appropriate values.
+	4. Blank lines will be removed automatically.
+	5. Remove unnecessary comments before creating your template.
+-->
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="authoring-tool" content="Adobe_Animate_CC">
+<title>005</title>
+<!-- write your code here -->
+<style>
+ #canvas, #este {
+/*  	max-width:1000px;
+ 	max-height: 562px;*/
+	}
+  #animation_container, #_preload_div_ {
+	position:absolute;
+	margin:auto;
+	left:0;right:0;
+	height:100%!important; 
+	width: 100%!important;
+  }
+</style>
+<style>
+  #animation_container, #_preload_div_ {
+	position:absolute;
+	margin:auto;
+	left:0;right:0;
+  }
+</style>
+<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script>
+function LoadGFonts(families, comp) {				
+	var lib=comp.getLibrary();				
+	var googleObject = {type: "Google", loadedFonts: 0, totalFonts: families.length, callOnLoad: lib.gfontAvailable};				
+	for(var i =0; i < families.length; i++)				
+		isFontAvailable(gFontsFamilies[i], googleObject);				
+}
+function isFontAvailable(font, obj) {				
+	var timeOut = 5000;				
+	var delay = 200;				
+	var interval = 0;				
+	var timeElapsed = 0;				
+	function checkFont() {				
+		var node = document.createElement("span");				
+		node.innerHTML = "giItT1WQy@!-/#";				
+		node.style.position      = "absolute";				
+		node.style.left          = "-1000px";				
+		node.style.top           = "-1000px";				
+		node.style.fontSize      = "300px";				
+		node.style.fontFamily    = "sans-serif";				
+		node.style.fontVariant   = "normal";				
+		node.style.fontStyle     = "normal";				
+		node.style.fontWeight    = "normal";				
+		node.style.letterSpacing = "0";				
+		document.body.appendChild(node);				
+		var width = node.offsetWidth;				
+		node.style.fontFamily = font+","+node.style.fontFamily;				
+		var returnVal = false;				
+		if((node && node.offsetWidth != width) || timeElapsed >=timeOut) {				
+			obj.loadedFonts++;				
+			if(interval)				
+				clearInterval(interval);				
+			obj.callOnLoad(font, obj.totalFonts);				
+			returnVal = true;				
+		}				
+		if(node) {				
+			node.parentNode.removeChild(node);				
+			node = null;				
+		}				
+		timeElapsed += delay;				
+		return returnVal;				
+	}				
+	if(!checkFont()) {				
+		interval = setInterval(checkFont, delay);				
+	}				
+}
+</script>
+<script>
+	var gFontsFamilies = ["Nunito"];
+</script>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Nunito:700&subset=latin">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Nunito:regular&subset=latin">
+<script>
+(function (cjs, an) {
+var p; // shortcut to reference prototypes
+var lib={};var ss={};var img={};
+lib.webFontTxtInst = {}; 
+var loadedTypekitCount = 0;
+var loadedGoogleCount = 0;
+var gFontsUpdateCacheList = [];
+var tFontsUpdateCacheList = [];
+lib.ssMetadata = [];
+lib.updateListCache = function (cacheList) {		
+	for(var i = 0; i < cacheList.length; i++) {		
+		if(cacheList[i].cacheCanvas)		
+			cacheList[i].updateCache();		
+	}		
+};		
+lib.addElementsToCache = function (textInst, cacheList) {		
+	var cur = textInst;		
+	while(cur != null && cur != exportRoot) {		
+		if(cacheList.indexOf(cur) != -1)		
+			break;		
+		cur = cur.parent;		
+	}		
+	if(cur != exportRoot) {		
+		var cur2 = textInst;		
+		var index = cacheList.indexOf(cur);		
+		while(cur2 != null && cur2 != cur) {		
+			cacheList.splice(index, 0, cur2);		
+			cur2 = cur2.parent;		
+			index++;		
+		}		
+	}		
+	else {		
+		cur = textInst;		
+		while(cur != null && cur != exportRoot) {		
+			cacheList.push(cur);		
+			cur = cur.parent;		
+		}		
+	}		
+};		
+lib.gfontAvailable = function(family, totalGoogleCount) {		
+	lib.properties.webfonts[family] = true;		
+	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
+	for(var f = 0; f < txtInst.length; ++f)		
+		lib.addElementsToCache(txtInst[f], gFontsUpdateCacheList);		
+	loadedGoogleCount++;		
+	if(loadedGoogleCount == totalGoogleCount) {		
+		lib.updateListCache(gFontsUpdateCacheList);		
+	}		
+};		
+lib.tfontAvailable = function(family, totalTypekitCount) {		
+	lib.properties.webfonts[family] = true;		
+	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
+	for(var f = 0; f < txtInst.length; ++f)		
+		lib.addElementsToCache(txtInst[f], tFontsUpdateCacheList);		
+	loadedTypekitCount++;		
+	if(loadedTypekitCount == totalTypekitCount) {		
+		lib.updateListCache(tFontsUpdateCacheList);		
+	}		
+};
+// symbols:
+(lib.flash0aiActivos = function() {
+	this.initialize(img.flash0aiActivos);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,628,549);// helper functions:
+function mc_symbol_clone() {
+	var clone = this._cloneProps(new this.constructor(this.mode, this.startPosition, this.loop));
+	clone.gotoAndStop(this.currentFrame);
+	clone.paused = this.paused;
+	clone.framerate = this.framerate;
+	return clone;
+}
+function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
+	var prototype = cjs.extend(symbol, cjs.MovieClip);
+	prototype.clone = mc_symbol_clone;
+	prototype.nominalBounds = nominalBounds;
+	prototype.frameBounds = frameBounds;
+	return prototype;
+	}
+(lib.Símbolo2 = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Capa_1
+	this.text = new cjs.Text("Contenido: Manuel Contreras L., Javiera Sandoval, Andrea Fuentealba.\nDiseño y producción: Ucorp\nFotografías:  Centro de Ecología Aplicada,  Tomás Yakasovic, Andrea Fuentealba, Freepik \nVideos: Diego Contreras R, Ucorp", "normal 400 18px 'Nunito'", "#666666");
+	this.text.lineHeight = 33;
+	this.text.lineWidth = 763;
+	this.text.parent = this;
+	this.text.setTransform(-381.4,-67.7);
+	if(!lib.properties.webfonts['Nunito']) {
+		lib.webFontTxtInst['Nunito'] = lib.webFontTxtInst['Nunito'] || [];
+		lib.webFontTxtInst['Nunito'].push(this.text);
+	}
+	this.timeline.addTween(cjs.Tween.get(this.text).wait(1));
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-383.4,-69.7,766.8,139.4);
+(lib.Símbolo1 = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Capa_1
+	this.text = new cjs.Text("CRÉDITOS", "normal 700 40px 'Nunito'", "#94A865");
+	this.text.lineHeight = 48;
+	this.text.lineWidth = 455;
+	this.text.parent = this;
+	this.text.setTransform(-227.5,-27.2);
+	if(!lib.properties.webfonts['Nunito']) {
+		lib.webFontTxtInst['Nunito'] = lib.webFontTxtInst['Nunito'] || [];
+		lib.webFontTxtInst['Nunito'].push(this.text);
+	}
+	this.timeline.addTween(cjs.Tween.get(this.text).wait(1));
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-229.5,-29.2,459,58.4);
+(lib.atraza_bt = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Capa_2
+	this.text = new cjs.Text("volver", "18px 'PT Sans Narrow'", "#FFFFFF");
+	this.text.textAlign = "center";
+	this.text.lineHeight = 17;
+	this.text.lineWidth = 67;
+	this.text.parent = this;
+	this.text.setTransform(0,-6.7);
+	this.timeline.addTween(cjs.Tween.get(this.text).wait(4));
+	// Capa_1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#FFCC33").s().p("AmPCvIAAldIMfAAIAAFdg");
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f("#FF9900").s().p("AmPCvIAAldIMfAAIAAFdg");
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape}]}).to({state:[{t:this.shape_1}]},1).wait(3));
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-40,-17.5,80,36);
+(lib.ananzar_bt = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Capa_2
+	this.text = new cjs.Text("avanzar", "18px 'PT Sans Narrow'", "#333333");
+	this.text.textAlign = "center";
+	this.text.lineHeight = 17;
+	this.text.lineWidth = 67;
+	this.text.parent = this;
+	this.text.setTransform(0,-6.7);
+	this.timeline.addTween(cjs.Tween.get(this.text).wait(2));
+	// Capa_1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#F1F1F1").s().p("AmPCvIAAldIMfAAIAAFdg");
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f("#999A9D").s().p("AmPCvIAAldIMfAAIAAFdg");
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape}]}).to({state:[{t:this.shape_1}]},1).wait(1));
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-40,-17.5,80,36);
+(lib.avanzar_mc = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// timeline functions:
+	this.frame_0 = function() {
+		this.button_1.on("click", function(){
+			historia()
+			avanza()
+		       //window.open("http://scratch.mit.edu", "_blank");
+			//this.parent.peli.gotoAndPlay(1);
+		});
+	}
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
+	// Capa_1
+	this.button_1 = new lib.ananzar_bt();
+	this.button_1.name = "button_1";
+	this.button_1.parent = this;
+	new cjs.ButtonHelper(this.button_1, 0, 1, 1);
+	this.timeline.addTween(cjs.Tween.get(this.button_1).wait(1));
+}).prototype = getMCSymbolPrototype(lib.avanzar_mc, new cjs.Rectangle(-40,-17.5,80,36), null);
+(lib.atraz_mc = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// timeline functions:
+	this.frame_0 = function() {
+		this.button_2.on("click", function(){
+				historia()
+			atraz()
+		       //window.open("http://scratch.mit.edu", "_blank");
+			//this.parent.peli.gotoAndPlay(1);
+		});
+	}
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
+	// Capa_1
+	this.button_2 = new lib.atraza_bt();
+	this.button_2.name = "button_2";
+	this.button_2.parent = this;
+	this.button_2.setTransform(5.8,10.9,1,1,0,0,0,30.7,30.7);
+	new cjs.ButtonHelper(this.button_2, 0, 1, 2, false, new lib.atraza_bt(), 3);
+	this.timeline.addTween(cjs.Tween.get(this.button_2).wait(1));
+}).prototype = getMCSymbolPrototype(lib.atraz_mc, new cjs.Rectangle(-64.9,-37.3,80,36), null);
+(lib.clic_avanzar = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Capa 1
+	this.instance = new lib.atraz_mc();
+	this.instance.parent = this;
+	this.instance.setTransform(-7.6,30.7,1,1,0,0,0,7.5,10.8);
+	this.instance_1 = new lib.avanzar_mc();
+	this.instance_1.parent = this;
+	this.instance_1.setTransform(70.7,30.7,1,1,0,0,0,30.7,30.7);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.instance}]}).wait(1));
+	// Capa_2
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("rgba(255,153,0,0)").s().p("AtRD6IAAnzIajAAIAAHzg");
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1));
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-85,-25,170,50);
+(lib.ecs_01 = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// timeline functions:
+	this.frame_8 = function() {
+		this.stop();
+	}
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).wait(8).call(this.frame_8).wait(1));
+	// Capa 12
+	this.instance = new lib.clic_avanzar("synched",0);
+	this.instance.parent = this;
+	this.instance.setTransform(861,515.1);
+	this.instance._off = true;
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(8).to({_off:false},0).wait(1));
+	// Capa_6
+	this.instance_1 = new lib.Símbolo2("synched",0);
+	this.instance_1.parent = this;
+	this.instance_1.setTransform(392.6,208.7);
+	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(9));
+	// Capa_2
+	this.instance_2 = new lib.Símbolo1("synched",0);
+	this.instance_2.parent = this;
+	this.instance_2.setTransform(238.7,101.3);
+	this.timeline.addTween(cjs.Tween.get(this.instance_2).wait(9));
+	// Capa_1
+	this.instance_3 = new lib.flash0aiActivos();
+	this.instance_3.parent = this;
+	this.instance_3.setTransform(534,223,0.752,0.752);
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#FAFAF5").s().p("EhOQAr7MAAAhX1MCchAAAMAAABX1g");
+	this.shape.setTransform(445.9,259.1);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape},{t:this.instance_3}]}).wait(9));
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-55,-22,1061.4,658);
+// stage content:
+(lib._005 = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// timeline functions:
+	this.frame_0 = function() {
+		this.stop()
+	}
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
+	// Capa_1
+	this.esc1_mc = new lib.ecs_01();
+	this.esc1_mc.name = "esc1_mc";
+	this.esc1_mc.parent = this;
+	this.esc1_mc.setTransform(504,278.4,1,1,0,0,0,450,256.4);
+	this.timeline.addTween(cjs.Tween.get(this.esc1_mc).wait(1));
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(499,281,1061.4,658);
+// library properties:
+lib.properties = {
+	id: '30FF464DD8E7A8488C9774A5AB9828FC',
+	width: 1000,
+	height: 562,
+	fps: 30,
+	color: "#FFFFFF",
+	opacity: 1.00,
+	webfonts: {},
+	manifest: [
+		{src:"005/flash0aiActivos.png?1596563864037", id:"flash0aiActivos"}
+	],
+	preloads: []
+};
+// bootstrap callback support:
+(lib.Stage = function(canvas) {
+	createjs.Stage.call(this, canvas);
+}).prototype = p = new createjs.Stage();
+p.setAutoPlay = function(autoPlay) {
+	this.tickEnabled = autoPlay;
+}
+p.play = function() { this.tickEnabled = true; this.getChildAt(0).gotoAndPlay(this.getTimelinePosition()) }
+p.stop = function(ms) { if(ms) this.seek(ms); this.tickEnabled = false; }
+p.seek = function(ms) { this.tickEnabled = true; this.getChildAt(0).gotoAndStop(lib.properties.fps * ms / 1000); }
+p.getDuration = function() { return this.getChildAt(0).totalFrames / lib.properties.fps * 1000; }
+p.getTimelinePosition = function() { return this.getChildAt(0).currentFrame / lib.properties.fps * 1000; }
+an.bootcompsLoaded = an.bootcompsLoaded || [];
+if(!an.bootstrapListeners) {
+	an.bootstrapListeners=[];
+}
+an.bootstrapCallback=function(fnCallback) {
+	an.bootstrapListeners.push(fnCallback);
+	if(an.bootcompsLoaded.length > 0) {
+		for(var i=0; i<an.bootcompsLoaded.length; ++i) {
+			fnCallback(an.bootcompsLoaded[i]);
+		}
+	}
+};
+an.compositions = an.compositions || {};
+an.compositions['30FF464DD8E7A8488C9774A5AB9828FC'] = {
+	getStage: function() { return exportRoot.getStage(); },
+	getLibrary: function() { return lib; },
+	getSpriteSheet: function() { return ss; },
+	getImages: function() { return img; }
+};
+an.compositionLoaded = function(id) {
+	an.bootcompsLoaded.push(id);
+	for(var j=0; j<an.bootstrapListeners.length; j++) {
+		an.bootstrapListeners[j](id);
+	}
+}
+an.getComposition = function(id) {
+	return an.compositions[id];
+}
+})(createjs = createjs||{}, AdobeAn = AdobeAn||{});
+var createjs, AdobeAn;
+</script>
+<script>
+// Global Scripts
+	var historia_a = new Array();
+historia_a.push(1);
+makeDiv = function(x, y, w, h, html, css) {  
+    // create and initialize DIV element  
+    var d = document.createElement("div");  
+    d.style.cssText = "visibility:hidden;position:absolute;max-width: 900px; left:0; top:0; width:" + w + "px; height:" + h + "px; overflow:visible; scrolling='no';" + (css ? css : "");  
+    d.innerHTML = html;  
+    // attach element to CreateJS stage  
+    canvas.parentNode.appendChild(d);  
+    var cjsDom = new createjs.DOMElement(d);  
+    cjsDom.x = x;  
+    cjsDom.y = y;  
+    return stage.addChild(cjsDom);  
+}  
+rmDiv = function(id) {
+    try {
+        var elem = document.getElementById(id);
+        elem.parentNode.removeChild(elem);
+    }
+    catch(e) {}
+}
+function historia() {
+	if (historia_a.indexOf(exportRoot.esc1_mc.currentFrame) != -1) {
+	} else {
+		historia_a.push(exportRoot.esc1_mc.currentFrame);
+	}
+}
+function atraz() {
+	//alert (exportRoot.esc1_mc.currentFrame)
+	var aqui = (historia_a.indexOf(exportRoot.esc1_mc.currentFrame))-1
+	createjs.Sound.stop();
+	if (historia_a[0] == exportRoot.esc1_mc.currentFrame || historia_a[1] == exportRoot.esc1_mc.currentFrame) {
+		javascript:parent.changeViewPrev();
+	}
+	exportRoot.esc1_mc.gotoAndStop(Number(historia_a[aqui]))
+	if (exportRoot.esc1_mc.currentFrame == 0 || exportRoot.esc1_mc.currentFrame == 1) {
+		exportRoot.esc1_mc.play();
+	}
+}
+function avanza() {
+	if (exportRoot.esc1_mc.timeline.duration == exportRoot.esc1_mc.currentFrame+1) {
+		javascript:parent.changeViewNext()
+	} else {
+		createjs.Sound.stop();
+		exportRoot.esc1_mc.play()
+	}
+}
+createjs.DisplayObject.prototype.getName = function() {  
+    if (!this.nameCache) {  
+        var parent = this.parent;  
+        var keys = Object.keys(parent);  
+        var len = keys.length;  
+        while (--len) {  
+            if (parent[keys[len]] === this) {  
+                this.nameCache = keys[len];  
+                break;  
+            }  
+        }  
+    }  
+    return this.nameCache;  
+}</script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("30FF464DD8E7A8488C9774A5AB9828FC");
+	var lib=comp.getLibrary();
+	try {
+		if(!(typeof gFontsFamilies === 'undefined' || gFontsFamilies === null))
+			LoadGFonts(gFontsFamilies, comp);		
+		if(!(typeof totalTypekitFonts === 'undefined' || totalTypekitFonts === null)) {			
+			var typekitObject = {type: 'Typekit', loadedFonts: 0, totalFonts: totalTypekitFonts, callOnLoad: lib.tfontAvailable};		
+			Typekit.load({
+			async: true,
+			'fontactive': function(family) {
+				isFontAvailable(family, typekitObject);
+				}
+			});
+		}
+	} catch(e) {};
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	var preloaderDiv = document.getElementById("_preload_div_");
+	preloaderDiv.style.display = 'none';
+	canvas.style.display = 'block';
+	exportRoot = new lib._005();
+	stage = new lib.Stage(canvas);
+	stage.enableMouseOver();	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.setFPS(lib.properties.fps);
+		createjs.Ticker.addEventListener("tick", stage);
+	}	
+	//Code to support hidpi screens and responsive scaling.
+	function makeResponsive(isResp, respDim, isScale, scaleType) {		
+		var lastW, lastH, lastS=1;		
+		window.addEventListener('resize', resizeCanvas);		
+		resizeCanvas();		
+		function resizeCanvas() {			
+			var w = lib.properties.width, h = lib.properties.height;			
+			var iw = window.innerWidth, ih=window.innerHeight;			
+			var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
+			if(isResp) {                
+				if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+					sRatio = lastS;                
+				}				
+				else if(!isScale) {					
+					if(iw<w || ih<h)						
+						sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==1) {					
+					sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==2) {					
+					sRatio = Math.max(xRatio, yRatio);				
+				}			
+			}			
+			canvas.width = w*pRatio*sRatio;			
+			canvas.height = h*pRatio*sRatio;
+			canvas.style.width = anim_container.style.width = dom_overlay_container.style.width = preloaderDiv.style.width = w*sRatio+'px';				
+			canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = preloaderDiv.style.height = h*sRatio+'px';
+			stage.scaleX = pRatio*sRatio;			
+			stage.scaleY = pRatio*sRatio;			
+			lastW = iw; lastH = ih; lastS = sRatio;            
+			stage.tickOnUpdate = false;            
+			stage.update();            
+			stage.tickOnUpdate = true;		
+		}
+	}
+	makeResponsive(true,'both',true,1);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script>
+<!-- write your code here -->
+</head>
+<body onload="init();" style="margin:0px;">
+	<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1000px; height:562px">
+		<canvas id="canvas" width="1000" height="562" style="position: absolute; display: none; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1000px; height:562px; position: absolute; left: 0px; top: 0px; display: none;">
+		</div>
+	</div>
+    <div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:562px; width: 1000px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src=005/_preloader.gif?1596563864041 style='vertical-align: middle; max-height: 100%'/></div>
+</body>
+</html>

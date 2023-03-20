@@ -1,0 +1,246 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+ 	
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Base</title>
+   <link rel="stylesheet" href="css/style.css">
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<style type="text/css"> 
+			@media (min-width: 1000px) { #frame{ width: 1000px; }
+
+#topheader .navbar-nav li > a {
+	text-transform: capitalize;
+	color: #333;
+	transition: background-color .2s, color .2s;
+	 {
+		background-color: #333;
+		color: #333;
+	}
+}
+body {
+  background-color: #ffffff!important;
+}
+
+.embed-responsive {
+  max-height: 562px;
+  max-width: 1000px;
+  margin: auto!important;
+  padding: 10px;
+  background-color: #282A36;
+}
+#topheader .navbar-nav li.active > a {
+	background-color: #282A36;
+	color: #282A36;
+}
+ .image1 {
+      /*  filter: invert(100%);
+        -webkit-filter: invert(100%);*/
+  }
+	</style>
+  </head>
+
+   <script type="text/javascript" src="common.js"></script>
+  	 <script type="text/javascript" src="APIWrapper.js"></script>
+	<script type="text/javascript" src="SCOFunctions.js"></script>
+  <body onload="loadPage()"  class ="">
+	<script src="js/jquery-3.3.1.min.js"></script>
+ 
+ 
+
+<div  class="embed-responsive embed-responsive-16by9" style="" >
+   <div id="topheader" class="embed-responsive-item" style="height: 25px ;position: absolute;z-index: 10"> <div>  <nav class="navbar justify-content-end titulos navbar-expand-lg navbar-light bg-transparent" >
+
+     <li class="nav-item dropdown ">
+        <a style="background-color: rgba(0,0,0,0.3); padding: 5px" class="dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contenidos</a><a href="#"><a href="#">  <img class="image1" style='margin-right: -10px' width=15px onClick='toggleFullscreen()' src='flechas.png'></a>  
+        <div id="menu_con" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+        	<a id="001" class="dropdown-item active"  onClick="ir_a('001', this.id)" href="#">Capítulo IV. IMPLANTACIÓN</a>
+         	<a id="002" class="dropdown-item" onClick="ir_a('002', this.id)" href="#">Intereses: De individuales a colectivos</a>
+      		<a id="003" class="dropdown-item" onClick="ir_a('003', this.id)" href="#">Esquema de transformación</a>
+      		<a id="004" class="dropdown-item" onClick="ir_a('004', this.id)" href="#">Seamos conscientes</a>
+      		<a id="005" class="dropdown-item" onClick="ir_a('005', this.id)" href="#">Créditos</a>
+      			<br>
+      		<a id="006" style="background-color: #363949" class="dropdown-item" href="GLOSARIO_CURSO_HUMEDALES.pdf" target="_blank">Glosario</a>
+        </div>
+      </li>
+     
+</nav></div></div>
+	<div id="frame_con" style="max-width: 1000px" class="sco_class embed-responsive-item"><iframe  id="frame1" src=""  scrolling="no" frameborder="0"></iframe></div>
+	<div id="object_con"  style="max-width: 1000px" class="embed-responsive-item"><object id="frame" type="text/html" data="" type="text/html"></object></div>
+</div>
+
+	    <script>
+	    var test2 = true;
+		var div01 = document.getElementById("frame_con");
+		var contenidos_ = document.getElementById("navbarDropdownMenuLink");
+  		var div02 = document.getElementById("object_con");
+		
+	    var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+	    var isIE = /*@cc_on!@*/false || !!document.documentMode;
+		var isEdge = !isIE && !!window.StyleMedia;
+
+	    if (isSafari == true || isEdge == true || isIE == true || test2 == true) {
+	    	frame = $("#nono");
+			div02.style.display = "none";
+			div01.style.display = "block";
+			frame1 = $("#frame1");
+
+			
+		} else {
+			frame1 = $("#nono");
+			div02.style.display = "block";
+			div01.style.display = "none";
+			frame = $("#frame");
+		}
+
+		var scos = ["",
+		
+		["001", "001"], 
+		["002", "002"], 
+		["003", "003"], 
+		["004", "004"],
+		["005", "005"], 
+		
+ 
+		
+		["con_fin", "Fin contenido"] ];
+        var currentView = 1,
+            minView     = 1,
+            maxView     = 20,
+            cuantas_son = scos.length-1,
+            
+			titulo_var  = document.getElementById('titulo_id');
+			video_div = document.getElementById('video_final');
+			video_id = document.getElementById('video_c');
+			menu_con = document.getElementById('menu_con');
+			contenidos_.innerHTML= "Contenidos " + currentView + "/" + cuantas_son;
+
+        function changeViewNext() {
+
+            if (currentView >= minView && currentView < maxView) {
+				
+               currentView++;
+               contenidos_.innerHTML= "Contenidos " + currentView + "/" + cuantas_son;
+               	if(scos[currentView][0].substring(0,2) == "v_"){
+               	   	 frame1.attr("src","video.html") 
+					 frame.attr("data","video.html") 
+				} else {
+					frame1.attr("src",scos[currentView][0]+ '.html') 
+					frame.attr("data",scos[currentView][0]+ '.html') 
+				}
+
+    			$( '#topheader .nav-item' ).find( 'a.active' ).removeClass( 'active' );
+        		$( "#"+scos[currentView][1] ).addClass( 'active' );
+            }
+
+        }
+
+        function changeViewPrev() {
+
+            if (currentView <= maxView && currentView > minView) {
+                currentView--;
+                contenidos_.innerHTML= "Contenidos " + currentView + "/" + cuantas_son;
+    			if(scos[currentView][0].substring(0,2) == "v_"){
+    				frame1.attr("src","video.html") 
+					frame.attr("data","video.html") 
+				} else {
+					frame1.attr("src",scos[currentView][0]+ '.html') 
+					frame.attr("data",scos[currentView][0]+ '.html')  
+					
+				}
+				
+            }
+        }
+		
+		$( document ).ready(function() {
+
+				if(scos[currentView][0].substring(0,2) == "v_"){
+					 frame1.attr("src","video.html")
+					 frame.attr("data","video.html") 
+				} else {
+					frame1.attr("src",scos[currentView][0]+ '.html')  
+					frame.attr("data",scos[currentView][0]+ '.html')  
+				}
+		});
+
+		$( '#topheader .nav-item a' ).on( 'click', function () {
+	
+		});
+
+		//full
+		function toggleFullscreen(event) {
+	var element = document.getElementById("frame_con");
+
+	if (event instanceof HTMLElement) {
+		element = event;
+	}
+
+	var isFullscreen = parent.document.webkitIsFullScreen || parent.document.mozFullScreen || false;
+
+	element.requestFullScreen = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || function () {
+		return false;
+	};
+	parent.document.cancelFullScreen = parent.document.cancelFullScreen || parent.document.webkitCancelFullScreen || parent.document.mozCancelFullScreen || function () {
+		return false;
+	};
+
+	isFullscreen ? parent.document.cancelFullScreen() : element.requestFullScreen();
+}
+		//
+
+	 function ir_a(donde, id) {
+		
+		$( '#topheader .nav-item' ).find( 'a.active' ).removeClass( 'active' );
+		$( "#"+id ).addClass( 'active' );
+	 	var encontrado = -1;
+	 			for(var contador=0; contador < scos.length; contador++ )
+				{
+
+     			if( scos[contador][0] == donde) {
+       			  var encontrado = contador;
+       			  break;
+   				}
+				} 
+				if( encontrado == -1 ){
+
+			     if (donde == "fin") {
+			     	currentView = 1;
+					frame.attr("data","video.html") 
+					frame1.attr("src","video.html") 
+			
+
+			     } else {
+			     	 alert("No se ha encontrado el página ");
+			     }
+   				
+   				}
+				else { 
+					
+  					currentView = encontrado;
+					if(scos[currentView][0].substring(0,2) == "v_"){
+					 frame.attr("data","video.html") 
+					  frame1.attr("src","video.html") 
+				} else {
+					frame1.attr("src",scos[currentView][0]+ '.html')
+					frame.attr("data",scos[currentView][0]+ '.html')  
+				}			
+					// $( ".sco_class" ).show();
+					// video_div.src = "";
+			   		// video_id.load();
+    		
+		 		  }
+		 		  contenidos_.innerHTML= "Contenidos " + currentView + "/" + cuantas_son;
+        }
+
+
+							
+    </script>
+    
+	<script src="css/index.js"></script>
+	<script src="js/bootstrap.js"></script>
+  </body>
+</html>
